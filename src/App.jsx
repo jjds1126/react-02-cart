@@ -4,16 +4,6 @@ function App() {
     const [name, setName] = useState(""); // input 관리용
     const [cart, setCart] = useState([]);  // 목록 관리용
 
-
-    // cart는 목록입니다. 요소의 형태를 생각해보면,
-    // 이 요소는 이름을 가져야되고, 수량도 가져야 됨 => 여러개의 값을 가지는 타입은 객체 뿐
-
-    // cart = [
-    //        { name: "지우개", quantity: 4 },
-    //        { name: "연필", quantity: 2 },
-    //        { name: "공책", quantity: 9 },
-    //       ];
-
     return (
       <>
         <h2>Simple Shop</h2>
@@ -37,9 +27,7 @@ function App() {
         <table border={1}
                cellPadding={10}
                style={{
-            // react에서 style 속성은 객체로 전달해줄 수 있으며,
-            // key: value 형태로 프로퍼티를 기록하는데
-            // key에는 camelCase로 작성해주어야야 함
+
             width: "100%",
             borderCollapse:"collapse",
         }}>
