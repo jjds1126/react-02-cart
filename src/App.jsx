@@ -53,13 +53,7 @@ function App() {
                   }}>-</button>
                   {item.quantity}
                   <button onClick={() => {
-                      // cart의 정보 중, index 자리에 있는 요소의 quantity값을 +1
-                      // cart[index].quantity += 1;  => 이렇게 쓰면 안됨 / react가 바꾼걸 모름
-                      //                             => state의 값을 바꿀땐 set을 쓰라고 했음
 
-                      // 1. react가 알아채게끔 하려면, 새 배열을 cart에 넣어야 됨 => 새 배열을 만들고
-                      // 2. 값을 바꾸고
-                      // 3. 그렇게 만들어진 배열을 setCart에 넣게 단계별로 진행하는 게 이해하기 쉽고 편함
                       const newCart = [...cart];
                       newCart[index].quantity += 1;
                       setCart(newCart);
@@ -80,5 +74,8 @@ function App() {
     </>
     );
 }
+// 가능을 합쳐서 핸들러를 만드는데,
+// '1을 더하고', '1을 빼고' 하는 기능이 아니라, "수량을 변경하는 함수" 로 만듫
+// 얼마나 바꾸느는 이 함수를 실행하는 곳에서 결정(매개변수로 전달)
 
 export default App;
